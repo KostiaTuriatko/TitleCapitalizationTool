@@ -41,8 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExtraSpacesDeleter.cs" />
+    <Compile Include="MyCaseSetter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PunctuationSigns.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

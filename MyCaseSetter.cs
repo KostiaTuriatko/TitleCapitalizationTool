@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Globalization;
 
 namespace TitleCapitalizationTool
 {
@@ -31,6 +32,25 @@ namespace TitleCapitalizationTool
             {
                 System.Console.WriteLine("Exception: something wrong in \"MyCaseSetter\"");
             }
+            str = tmp.ToString();
+            return str;
+        }
+        internal static string NewSetCase(ref string str)
+        {
+            TextInfo myTI = new CultureInfo("en-US", false).TextInfo;
+            StringBuilder tmp = new StringBuilder("");
+            foreach(string word in str.Split(' '))
+            {
+                if (LowerWordsException(word))
+                {
+                    tmp.Append(word);
+                } else
+                {
+                    tmp.Append(myTI.ToTitleCase(word));
+                }
+                tmp.Append(" ");
+            }
+            tmp[9] = char.ToUpper(tmp[9]);
             str = tmp.ToString();
             return str;
         }

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Text;
+using System.Globalization;
 
 namespace TitleCapitalizationTool
 {
@@ -33,6 +35,7 @@ namespace TitleCapitalizationTool
                     PunctuationSigns.DashInstall(ref text);
                     PunctuationSigns.InsertSpaceAfterPunctuation(ref text);
                     MyCaseSetter.SetCase(ref text);
+                    //MyCaseSetter.NewSetCase(ref text);
 
                     Console.Write("Capitalized title: ");
                     Console.ForegroundColor = ConsoleColor.Green;

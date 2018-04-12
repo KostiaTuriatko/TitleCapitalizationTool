@@ -3,7 +3,11 @@
 namespace TitleCapitalizationTool
 {
     internal static class MyCaseSetter
-    {        
+    {
+        internal static string[] lowerWords = { "a", "an", "the",
+                                    "and", "but", "for", "not", "so", "yet",
+                                    "at", "by", "in", "of", "on", "or", "out", "to", "up" };
+
         internal static string SetCase(ref string str)
         {
             StringBuilder tmp = new StringBuilder("");
@@ -23,6 +27,7 @@ namespace TitleCapitalizationTool
             str = tmp.ToString();
             return str;
         }
+
         internal static string FirstLetterToUpper(ref string str)
         {
             StringBuilder tmp = new StringBuilder(str);
@@ -33,10 +38,11 @@ namespace TitleCapitalizationTool
             str = tmp.ToString();
             return str;
         }
+
         internal static bool LowerWordsException(string str)
         {
             bool result = false;
-            foreach(string word in LowerWords)
+            foreach(string word in lowerWords)
             {
                 if(str == word)
                 {
@@ -45,8 +51,5 @@ namespace TitleCapitalizationTool
             }
             return result;
         }
-        internal static string[] LowerWords = { "a", "an", "the",
-                                    "and", "but", "for", "not", "so", "yet",
-                                    "at", "by", "in", "of", "on", "or", "out", "to", "up" };
     }
 }

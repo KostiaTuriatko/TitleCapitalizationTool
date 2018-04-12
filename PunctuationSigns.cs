@@ -67,7 +67,6 @@
             str = tmp;
             return str;
         }
-
         internal static string DashInstall(ref string str)
         {            
             for(int i = 0; i < str.Length-1; i++)

@@ -51,5 +51,6 @@ namespace TitleCapitalizationTool
             }
             return result;
         }
+        
     }
 }

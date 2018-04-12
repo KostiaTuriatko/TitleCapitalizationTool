@@ -34,8 +34,8 @@ namespace TitleCapitalizationTool
                     PunctuationSigns.DeleteSpaceBeforePunctuate(ref text);
                     PunctuationSigns.DashInstall(ref text);
                     PunctuationSigns.InsertSpaceAfterPunctuation(ref text);
+                    text = text.ToLower();
                     MyCaseSetter.SetCase(ref text);
-                    //MyCaseSetter.NewSetCase(ref text);
 
                     Console.Write("Capitalized title: ");
                     Console.ForegroundColor = ConsoleColor.Green;

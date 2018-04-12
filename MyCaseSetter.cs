@@ -4,33 +4,32 @@ using System.Globalization;
 namespace TitleCapitalizationTool
 {
     internal static class MyCaseSetter
-    {
+    {        
         internal static string SetCase(ref string str)
         {
             StringBuilder tmp = new StringBuilder("");
             string[] words = str.Split(' ');
-            try
+            for(int i = 0; i < words.Length; i++)
             {
-                foreach (string word in words)
+                string s = words[i];
+                if(LowerWordsException(s) && i != (words.Length-1))
                 {
-                    for (int i = 0; i < word.Length; i++)
-                    {
-                        if (i == 0 && char.IsLetter(word[i]) && !LowerWordsException(word))
-                        {
-                            tmp.Append(char.ToUpper(word[i]));
-                        }
-                        else
-                        {
-                            tmp.Append(char.ToLower(word[i]));
-                        }
-                    }
-                    tmp.Append(" ");
+                    tmp.Append(s + ' ');
+                } else
+                {
+                    tmp.Append(FirstLetterToUpper(ref s) + ' ');
                 }
-                tmp[0] = char.ToUpper(words[0][0]);     // First letter UpperCase always
             }
-            catch(System.IndexOutOfRangeException)
+            tmp[0] = char.ToUpper(tmp[0]);
+            str = tmp.ToString();
+            return str;
+        }
+        internal static string FirstLetterToUpper(ref string str)
+        {
+            StringBuilder tmp = new StringBuilder(str);
+            if(char.IsLetter(tmp[0]) && char.IsLower(tmp[0]))
             {
-                System.Console.WriteLine("Exception: something wrong in \"MyCaseSetter\"");
+                tmp[0] = char.ToUpper(tmp[0]);
             }
             str = tmp.ToString();
             return str;

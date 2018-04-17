@@ -35,8 +35,6 @@ namespace TitleCapitalizationTool
                     text = text.ToLower();
                     text = MyCaseSetter.SetCase(text);
 
-
-
                     Console.Write("Capitalized title: ");
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine(text);

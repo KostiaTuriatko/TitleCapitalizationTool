@@ -6,7 +6,7 @@
         {
             try
             {
-                string ChangeableString = "";
+                string changeableString = "";
                 int i;
                 for (i = 0; i < input.Length - 1; i++)
                 {
@@ -14,24 +14,24 @@
                     {
                         if (char.IsPunctuation(input[i + 1]))
                         {
-                            ChangeableString = ChangeableString + input[i + 1];
+                            changeableString = changeableString + input[i + 1];
                         }
                         else
                         {
-                            ChangeableString = ChangeableString + input[i] + input[i + 1];
+                            changeableString = changeableString + input[i] + input[i + 1];
                         }
                         i += 1;
                     }
                     else
                     {
-                        ChangeableString = ChangeableString + input[i];
+                        changeableString = changeableString + input[i];
                     }
                 }
                 if (input.Length > 0 && !(char.IsPunctuation(input[i - 1])))
                 {
-                    ChangeableString = ChangeableString + input[input.Length - 1];
+                    changeableString = changeableString + input[input.Length - 1];
                 }
-                input = ChangeableString;
+                input = changeableString;
             }
             catch (System.IndexOutOfRangeException)
             {
@@ -42,31 +42,31 @@
 
         internal static string InsertSpaceAfterPunctuation(string input)
         {
-            string ChangeableString = "";
+            string changeableString = "";
             for (int i = 0; i < input.Length - 1; i++)
             {
                 if (char.IsPunctuation(input[i]))
                 {
                     if (input[i+1] == ' ')
                     {
-                        ChangeableString = ChangeableString + input[i] + input[i + 1];
+                        changeableString = changeableString + input[i] + input[i + 1];
                     }
                     else
                     {
-                        ChangeableString = ChangeableString + input[i] + ' ' + input[i + 1];
+                        changeableString = changeableString + input[i] + ' ' + input[i + 1];
                     }
                     i += 1;
                 }
                 else
                 {
-                    ChangeableString = ChangeableString + input[i];
+                    changeableString = changeableString + input[i];
                 }
             }
             if (input.Length >= 1)
             {
-                ChangeableString = ChangeableString + input[input.Length - 1];
+                changeableString = changeableString + input[input.Length - 1];
             }
-            return ChangeableString;
+            return changeableString;
         }
         internal static string DashInstall(string input)
         {            

@@ -10,7 +10,7 @@ namespace TitleCapitalizationTool
             string text = "";
             while (true)
             {
-                if (IsWhiteSpaceInput == false)
+                if (!IsWhiteSpaceInput)
                 {
                     Console.Write("Enter title to capitalize: ");
                 }

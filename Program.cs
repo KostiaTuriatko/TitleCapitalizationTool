@@ -6,11 +6,11 @@ namespace TitleCapitalizationTool
     {
         static void Main()
         {
-            bool flag = false;
+            bool IsWhiteSpaceInput = false;
             string text = "";
             while (true)
             {
-                if (flag == false)
+                if (IsWhiteSpaceInput == false)
                 {
                     Console.Write("Enter title to capitalize: ");
                 }
@@ -21,12 +21,12 @@ namespace TitleCapitalizationTool
                 if (string.IsNullOrWhiteSpace(text))
                 {
                     Console.SetCursorPosition(27, Console.CursorTop - 1);
-                    flag = true;
+                    IsWhiteSpaceInput = true;
                 }
 
                 if (!string.IsNullOrWhiteSpace(text))
                 {
-                    flag = false;
+                    IsWhiteSpaceInput = false;
 
                     text = ExtraSpacesDeleter.Deleter(text);
                     text = PunctuationSigns.DeleteSpaceBeforePunctuate(text);

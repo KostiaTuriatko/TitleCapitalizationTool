@@ -40,16 +40,16 @@ namespace TitleCapitalizationTool
 
         internal static bool LowerWordsException(string input)
         {
-            bool result = false;
+            bool IsExceptionWord = false;
             foreach (string word in lowerWords)
             {
                 if (input == word)
                 {
-                    result = true;
+                    IsExceptionWord = true;
                     break;
                 }
             }
-            return result;
+            return IsExceptionWord;
         }
     }
 }

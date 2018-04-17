@@ -50,12 +50,14 @@
                     if (input[i+1] == ' ')
                     {
                         ChangeableString = ChangeableString + input[i] + input[i + 1];
-                    } else
+                    }
+                    else
                     {
                         ChangeableString = ChangeableString + input[i] + ' ' + input[i + 1];
                     }
                     i += 1;
-                } else
+                }
+                else
                 {
                     ChangeableString = ChangeableString + input[i];
                 }

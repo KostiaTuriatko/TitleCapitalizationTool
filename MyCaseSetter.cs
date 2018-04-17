@@ -18,7 +18,8 @@ namespace TitleCapitalizationTool
                 if (LowerWordsException(word) && i != (words.Length-1))
                 {
                     ChangeableString.Append(word + ' ');
-                } else
+                }
+                else
                 {
                     ChangeableString.Append(FirstLetterToUpper(word) + ' ');
                 }

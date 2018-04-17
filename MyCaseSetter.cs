@@ -10,31 +10,31 @@ namespace TitleCapitalizationTool
 
         internal static string SetCase(string input)
         {
-            StringBuilder tmp = new StringBuilder("");
+            StringBuilder ChangeableString = new StringBuilder("");
             string[] words = input.Split(' ');
             for(int i = 0; i < words.Length; i++)
             {
                 string word = words[i];
                 if(LowerWordsException(word) && i != (words.Length-1))
                 {
-                    tmp.Append(word + ' ');
+                    ChangeableString.Append(word + ' ');
                 } else
                 {
-                    tmp.Append(FirstLetterToUpper(word) + ' ');
+                    ChangeableString.Append(FirstLetterToUpper(word) + ' ');
                 }
             }
-            tmp[0] = char.ToUpper(tmp[0]);
-            return tmp.ToString();
+            ChangeableString[0] = char.ToUpper(ChangeableString[0]);
+            return ChangeableString.ToString();
         }
 
         internal static string FirstLetterToUpper(string input)
         {
-            StringBuilder tmp = new StringBuilder(input);
-            if(char.IsLetter(tmp[0]) && char.IsLower(tmp[0]))
+            StringBuilder ChangeableString = new StringBuilder(input);
+            if(char.IsLetter(ChangeableString[0]) && char.IsLower(ChangeableString[0]))
             {
-                tmp[0] = char.ToUpper(tmp[0]);
+                ChangeableString[0] = char.ToUpper(ChangeableString[0]);
             }
-            return tmp.ToString();
+            return ChangeableString.ToString();
         }
 
         internal static bool LowerWordsException(string input)

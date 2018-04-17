@@ -28,12 +28,12 @@ namespace TitleCapitalizationTool
                 {
                     flag = false;
 
-                    ExtraSpacesDeleter.Deleter(ref text);
-                    PunctuationSigns.DeleteSpaceBeforePunctuate(ref text);
-                    PunctuationSigns.DashInstall(ref text);
-                    PunctuationSigns.InsertSpaceAfterPunctuation(ref text);
+                    text = ExtraSpacesDeleter.Deleter(ref text);
+                    text = PunctuationSigns.DeleteSpaceBeforePunctuate(ref text);
+                    text = PunctuationSigns.DashInstall(ref text);
+                    text = PunctuationSigns.InsertSpaceAfterPunctuation(ref text);
                     text = text.ToLower();
-                    MyCaseSetter.SetCase(ref text);
+                    text = MyCaseSetter.SetCase(ref text);
 
                     Console.Write("Capitalized title: ");
                     Console.ForegroundColor = ConsoleColor.Green;

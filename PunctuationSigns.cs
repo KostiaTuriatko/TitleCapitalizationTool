@@ -1,6 +1,6 @@
 ﻿namespace TitleCapitalizationTool
 {
-    internal static class PunctuationSigns
+    internal sealed class PunctuationSigns
     {
         internal static string DeleteSpaceBeforePunctuate(ref string str)
         {

@@ -2,7 +2,7 @@
 
 namespace TitleCapitalizationTool
 {
-    internal static class ExtraSpacesDeleter
+    internal sealed class ExtraSpacesDeleter
     {
         internal static string Deleter(ref string str)
         {

@@ -4,7 +4,7 @@ namespace TitleCapitalizationTool
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] arguments)
         {
             bool flag = false;
             string text = "";

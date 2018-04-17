@@ -2,82 +2,82 @@
 {
     internal sealed class PunctuationSigns
     {
-        internal static string DeleteSpaceBeforePunctuate(string str)
+        internal static string DeleteSpaceBeforePunctuate(string input)
         {
             try
             {
                 string tmp = "";
                 int i;
-                for (i = 0; i < str.Length - 1; i++)
+                for (i = 0; i < input.Length - 1; i++)
                 {
-                    if (str[i] == ' ')
+                    if (input[i] == ' ')
                     {
-                        if (char.IsPunctuation(str[i + 1]))
+                        if (char.IsPunctuation(input[i + 1]))
                         {
-                            tmp = tmp + str[i + 1];
+                            tmp = tmp + input[i + 1];
                         }
                         else
                         {
-                            tmp = tmp + str[i] + str[i + 1];
+                            tmp = tmp + input[i] + input[i + 1];
                         }
                         i += 1;
                     }
                     else
                     {
-                        tmp = tmp + str[i];
+                        tmp = tmp + input[i];
                     }
                 }
-                if (str.Length > 0 && !(char.IsPunctuation(str[i - 1])))
+                if (input.Length > 0 && !(char.IsPunctuation(input[i - 1])))
                 {
-                    tmp = tmp + str[str.Length - 1];
+                    tmp = tmp + input[input.Length - 1];
                 }
-                str = tmp;
+                input = tmp;
             }
             catch(System.IndexOutOfRangeException)
             {
                 System.Console.WriteLine("Exception: something wrong in \"Punctuation signs\"");
             }
-            return str;
+            return input;
         }
 
-        internal static string InsertSpaceAfterPunctuation(string str)
+        internal static string InsertSpaceAfterPunctuation(string input)
         {
             string tmp = "";
-            for(int i = 0; i < str.Length-1; i++)
+            for(int i = 0; i < input.Length-1; i++)
             {
-                if(char.IsPunctuation(str[i]))
+                if(char.IsPunctuation(input[i]))
                 {
-                    if(str[i+1] == ' ')
+                    if(input[i+1] == ' ')
                     {
-                        tmp = tmp + str[i] + str[i + 1];
+                        tmp = tmp + input[i] + input[i + 1];
                     } else
                     {
-                        tmp = tmp + str[i] + ' ' + str[i + 1];
+                        tmp = tmp + input[i] + ' ' + input[i + 1];
                     }
                     i += 1;
                 } else
                 {
-                    tmp = tmp + str[i];
+                    tmp = tmp + input[i];
                 }
             }
-            if (str.Length >= 1)
+            if (input.Length >= 1)
             {
-                tmp = tmp + str[str.Length - 1];
+                tmp = tmp + input[input.Length - 1];
             }
             return tmp;
         }
-        internal static string DashInstall(string str)
+        internal static string DashInstall(string input)
         {            
-            for(int i = 0; i < str.Length-1; i++)
+            for(int i = 0; i < input.Length-1; i++)
             {
-                if (str[i] == '-')
+                if (input[i] == '-')
                 {
-                    str = str.Remove(i, 1);
-                    str = str.Insert(i, " - ");
+                    input = input.Remove(i, 1);
+                    input = input.Insert(i, " - ");
                     i++;
                 }
             }
-            return str;
+            return input;
         }
     }
 }

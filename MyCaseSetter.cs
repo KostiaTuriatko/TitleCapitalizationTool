@@ -15,7 +15,7 @@ namespace TitleCapitalizationTool
             for (int i = 0; i < words.Length; i++)
             {
                 string word = words[i];
-                if (LowerWordsException(word) && i != (words.Length-1))
+                if (LowerWordsException(word) && i != (words.Length - 1))
                 {
                     ChangeableString.Append(word + ' ');
                 }

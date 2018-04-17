@@ -6,7 +6,7 @@ namespace TitleCapitalizationTool
     {
         private static string[] lowerWords = { "a", "at", "an", "and", "but", "by",
                                                "for", "in", "not", "of", "on", "or",
-                                               "out",  "so", "the", "to", "up", "yet"};
+                                               "out", "so", "the", "to", "up", "yet" };
 
         internal static string SetCase(string input)
         {

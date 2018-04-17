@@ -20,7 +20,7 @@ namespace TitleCapitalizationTool
 
                 if (string.IsNullOrWhiteSpace(text))
                 {
-                    Console.SetCursorPosition(27, Console.CursorTop - 1);
+                    Console.SetCursorPosition(27, Console.CursorTop - 1);   
                     IsWhiteSpaceInput = true;
                 }
 

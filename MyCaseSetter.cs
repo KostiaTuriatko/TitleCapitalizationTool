@@ -46,6 +46,7 @@ namespace TitleCapitalizationTool
                 if (input == word)
                 {
                     result = true;
+                    break;
                 }
             }
             return result;

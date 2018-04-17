@@ -4,7 +4,7 @@ namespace TitleCapitalizationTool
 {
     class Program
     {
-        static void Main(string[] arguments)
+        static void Main()
         {
             bool flag = false;
             string text = "";
@@ -34,6 +34,8 @@ namespace TitleCapitalizationTool
                     text = PunctuationSigns.InsertSpaceAfterPunctuation(text);
                     text = text.ToLower();
                     text = MyCaseSetter.SetCase(text);
+
+
 
                     Console.Write("Capitalized title: ");
                     Console.ForegroundColor = ConsoleColor.Green;

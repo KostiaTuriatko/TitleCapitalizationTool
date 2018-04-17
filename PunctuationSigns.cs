@@ -64,8 +64,7 @@
             {
                 tmp = tmp + str[str.Length - 1];
             }
-            str = tmp;
-            return str;
+            return tmp;
         }
         internal static string DashInstall(string str)
         {            

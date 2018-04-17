@@ -24,8 +24,7 @@ namespace TitleCapitalizationTool
                 }
             }
             tmp[0] = char.ToUpper(tmp[0]);
-            str = tmp.ToString();
-            return str;
+            return tmp.ToString();
         }
 
         internal static string FirstLetterToUpper(string str)
@@ -35,8 +34,7 @@ namespace TitleCapitalizationTool
             {
                 tmp[0] = char.ToUpper(tmp[0]);
             }
-            str = tmp.ToString();
-            return str;
+            return tmp.ToString();
         }
 
         internal static bool LowerWordsException(string str)

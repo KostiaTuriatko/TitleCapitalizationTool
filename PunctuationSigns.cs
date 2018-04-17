@@ -43,11 +43,11 @@
         internal static string InsertSpaceAfterPunctuation(string input)
         {
             string ChangeableString = "";
-            for(int i = 0; i < input.Length-1; i++)
+            for (int i = 0; i < input.Length-1; i++)
             {
-                if(char.IsPunctuation(input[i]))
+                if (char.IsPunctuation(input[i]))
                 {
-                    if(input[i+1] == ' ')
+                    if (input[i+1] == ' ')
                     {
                         ChangeableString = ChangeableString + input[i] + input[i + 1];
                     } else
@@ -68,7 +68,7 @@
         }
         internal static string DashInstall(string input)
         {            
-            for(int i = 0; i < input.Length-1; i++)
+            for (int i = 0; i < input.Length-1; i++)
             {
                 if (input[i] == '-')
                 {

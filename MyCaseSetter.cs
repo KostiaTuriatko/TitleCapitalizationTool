@@ -12,10 +12,10 @@ namespace TitleCapitalizationTool
         {
             StringBuilder ChangeableString = new StringBuilder("");
             string[] words = input.Split(' ');
-            for(int i = 0; i < words.Length; i++)
+            for (int i = 0; i < words.Length; i++)
             {
                 string word = words[i];
-                if(LowerWordsException(word) && i != (words.Length-1))
+                if (LowerWordsException(word) && i != (words.Length-1))
                 {
                     ChangeableString.Append(word + ' ');
                 } else
@@ -30,7 +30,7 @@ namespace TitleCapitalizationTool
         internal static string FirstLetterToUpper(string input)
         {
             StringBuilder ChangeableString = new StringBuilder(input);
-            if(char.IsLetter(ChangeableString[0]) && char.IsLower(ChangeableString[0]))
+            if (char.IsLetter(ChangeableString[0]) && char.IsLower(ChangeableString[0]))
             {
                 ChangeableString[0] = char.ToUpper(ChangeableString[0]);
             }
@@ -40,9 +40,9 @@ namespace TitleCapitalizationTool
         internal static bool LowerWordsException(string input)
         {
             bool result = false;
-            foreach(string word in lowerWords)
+            foreach (string word in lowerWords)
             {
-                if(input == word)
+                if (input == word)
                 {
                     result = true;
                 }

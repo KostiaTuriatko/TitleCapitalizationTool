@@ -18,7 +18,7 @@ namespace TitleCapitalizationTool
                 text = Console.ReadLine();
                 Console.ForegroundColor = ConsoleColor.Gray;
 
-                if(string.IsNullOrWhiteSpace(text))
+                if (string.IsNullOrWhiteSpace(text))
                 {
                     Console.SetCursorPosition(27, Console.CursorTop - 1);
                     flag = true;

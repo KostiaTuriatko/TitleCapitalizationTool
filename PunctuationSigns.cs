@@ -33,7 +33,7 @@
                 }
                 input = ChangeableString;
             }
-            catch(System.IndexOutOfRangeException)
+            catch (System.IndexOutOfRangeException)
             {
                 System.Console.WriteLine("Exception: something wrong in \"Punctuation signs\"");
             }

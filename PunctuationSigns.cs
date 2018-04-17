@@ -2,7 +2,7 @@
 {
     internal sealed class PunctuationSigns
     {
-        internal static string DeleteSpaceBeforePunctuate(ref string str)
+        internal static string DeleteSpaceBeforePunctuate(string str)
         {
             try
             {
@@ -40,7 +40,7 @@
             return str;
         }
 
-        internal static string InsertSpaceAfterPunctuation(ref string str)
+        internal static string InsertSpaceAfterPunctuation(string str)
         {
             string tmp = "";
             for(int i = 0; i < str.Length-1; i++)
@@ -67,7 +67,7 @@
             str = tmp;
             return str;
         }
-        internal static string DashInstall(ref string str)
+        internal static string DashInstall(string str)
         {            
             for(int i = 0; i < str.Length-1; i++)
             {

@@ -8,7 +8,7 @@ namespace TitleCapitalizationTool
                                     "and", "but", "for", "not", "so", "yet",
                                     "at", "by", "in", "of", "on", "or", "out", "to", "up" };
 
-        internal static string SetCase(ref string str)
+        internal static string SetCase(string str)
         {
             StringBuilder tmp = new StringBuilder("");
             string[] words = str.Split(' ');
@@ -20,7 +20,7 @@ namespace TitleCapitalizationTool
                     tmp.Append(s + ' ');
                 } else
                 {
-                    tmp.Append(FirstLetterToUpper(ref s) + ' ');
+                    tmp.Append(FirstLetterToUpper(s) + ' ');
                 }
             }
             tmp[0] = char.ToUpper(tmp[0]);
@@ -28,7 +28,7 @@ namespace TitleCapitalizationTool
             return str;
         }
 
-        internal static string FirstLetterToUpper(ref string str)
+        internal static string FirstLetterToUpper(string str)
         {
             StringBuilder tmp = new StringBuilder(str);
             if(char.IsLetter(tmp[0]) && char.IsLower(tmp[0]))

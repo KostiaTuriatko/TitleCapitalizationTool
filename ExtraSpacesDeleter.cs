@@ -4,7 +4,7 @@ namespace TitleCapitalizationTool
 {
     internal sealed class ExtraSpacesDeleter
     {
-        internal static string Deleter(string input)
+        internal string Deleter(string input)
         {
             return input = string.Join(" ", input.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries));
         }

@@ -8,7 +8,7 @@ namespace TitleCapitalizationTool
                                                "for", "in", "not", "of", "on", "or",
                                                "out", "so", "the", "to", "up", "yet" };
 
-        internal static string SetCase(string input)
+        internal string SetCase(string input)
         {
             StringBuilder changeableString = new StringBuilder("");
             string[] words = input.Split(' ');

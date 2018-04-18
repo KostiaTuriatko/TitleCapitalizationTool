@@ -7,6 +7,10 @@ namespace TitleCapitalizationTool
         static void Main()
         {
             bool IsWhiteSpaceInput = false;
+            MyCaseSetter caseSetter = new MyCaseSetter();
+            ExtraSpacesDeleter spacesDeleter = new ExtraSpacesDeleter();
+            PunctuationSigns punctuation = new PunctuationSigns();
+
             string text = "";
             while (true)
             {
@@ -28,12 +32,12 @@ namespace TitleCapitalizationTool
                 {
                     IsWhiteSpaceInput = false;
 
-                    text = ExtraSpacesDeleter.Deleter(text);
-                    text = PunctuationSigns.DeleteSpaceBeforePunctuate(text);
-                    text = PunctuationSigns.DashInstall(text);
-                    text = PunctuationSigns.InsertSpaceAfterPunctuation(text);
+                    text = spacesDeleter.Deleter(text);
+                    text = punctuation.DeleteSpaceBeforePunctuate(text);
+                    text = punctuation.DashInstall(text);
+                    text = punctuation.InsertSpaceAfterPunctuation(text);
                     text = text.ToLower();
-                    text = MyCaseSetter.SetCase(text);
+                    text = caseSetter.SetCase(text);
 
                     Console.Write("Capitalized title: ");
                     Console.ForegroundColor = ConsoleColor.Green;

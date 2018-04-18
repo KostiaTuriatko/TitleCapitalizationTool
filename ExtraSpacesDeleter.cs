@@ -6,7 +6,7 @@ namespace TitleCapitalizationTool
     {
         internal string Deleter(string input)
         {
-            return input = string.Join(" ", input.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries));
+            return string.Join(" ", input.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries));
         }
     }
 }

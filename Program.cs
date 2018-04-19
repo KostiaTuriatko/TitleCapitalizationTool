@@ -6,7 +6,7 @@ namespace TitleCapitalizationTool
     {
         static void Main()
         {
-            bool IsWhiteSpaceInput = false;
+            bool IsNothing = false;
             MyCaseSetter caseSetter = new MyCaseSetter();
             ExtraSpacesDeleter spacesDeleter = new ExtraSpacesDeleter();
             PunctuationSigns punctuation = new PunctuationSigns();
@@ -14,7 +14,7 @@ namespace TitleCapitalizationTool
             string text = "";
             while (true)
             {
-                if (!IsWhiteSpaceInput)
+                if (!IsNothing)
                 {
                     Console.Write("Enter title to capitalize: ");
                 }
@@ -24,13 +24,24 @@ namespace TitleCapitalizationTool
 
                 if (string.IsNullOrWhiteSpace(text))
                 {
-                    Console.SetCursorPosition(27, Console.CursorTop - 1);   
-                    IsWhiteSpaceInput = true;
+                    Console.SetCursorPosition(27, Console.CursorTop - 1);
+                    IsNothing = true;
                 }
 
-                if (!string.IsNullOrWhiteSpace(text))
+                if (!string.IsNullOrEmpty(text))
                 {
-                    IsWhiteSpaceInput = false;
+                    IsNothing = false;
+
+                    if (string.IsNullOrWhiteSpace(text))
+                    {
+                        Console.WriteLine();
+                        Console.Write("Capitalized title: ");
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine(text);
+                        Console.ForegroundColor = ConsoleColor.Gray;
+                        Console.WriteLine();
+                        continue;
+                    }
 
                     text = spacesDeleter.Deleter(text);
                     text = punctuation.DeleteSpaceBeforePunctuate(text);

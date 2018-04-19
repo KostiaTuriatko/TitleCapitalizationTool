@@ -5,7 +5,7 @@ namespace TitleCapitalizationTool
 {
     internal sealed class MyCaseSetter
     {
-        private static string[] lowerWords = { "a", "at", "an", "and", "but", "by",
+        private static string[] lowerWords = { "a", "an", "and", "at", "but", "by",
                                                "for", "in", "not", "of", "on", "or",
                                                "out", "so", "the", "to", "up", "yet" };
 
